@@ -33,6 +33,10 @@ Create a HTML file to implement form based input and output.
 Publish the website in the given URL.
 
 ## PROGRAM :
+~~~
+
+ex5.html
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +46,7 @@ Publish the website in the given URL.
 </head>
 <body style="text-align:center; margin-top:50px; background: linear-gradient(to right, black, grey, white, sandybrown);">
     <h2>Power of Lamp Filament</h2>
-    <p><b>Formula:</b> P = I² × R</p>
+    <p><b>Formula:</b> P = I² x R</p>
 
     <form method="post">
         {% csrf_token %}
@@ -73,7 +77,7 @@ def calculate_power(request):
         power = (current ** 2) * resistance            # P = I² × R
         print(f"Current: {current} A, Resistance: {resistance} Ω, Power: {power:.2f} W")
 
-    return render(request, 'ex5/ex5.html', {'Power': power})
+    return render(request, 'ex5/ex5.html', {'Power':power})
 
 urls.py
 
@@ -85,7 +89,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.calculate_power),
 ]
-
+~~~
 ## SERVER SIDE PROCESSING:
 ![alt text](image.png)
 
